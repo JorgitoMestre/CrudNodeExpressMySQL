@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mi Primera App con Node y MySQL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/boostrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/bootstrap.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/bootstrap-grid.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/bootstrap-grid.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/bootstrap-reboot.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/bootstrap-reboot.min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="E:/Jorgito/Node JS/NodeMySQL_Example/src/views/css/style.css" type="text/css" media="screen">
+    <!--script type="text/javascript" src="../Plantila/layoutit/src/scripts.js">
+
+    </script-->
+
+
+  </head>
+  <body>
+        <nav class="navbar navbar-dark bg-dark">
+          <a href="/" class="navbar-brand">CRUD NODEJS MYSQL</a>
+        </nav>
+
+<!-- A partir de aqui hay que configurar las diferentes vistas-->
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-7">
+       <table class="table table-bordered table-hover">
+         <thead>
+           <tr>
+             <th>No.</th>
+             <th>Nombre</th>
+             <th>Edad</th>
+             <th>Acción</th>
+           </tr>
+         </thead>
+         <tbody>
+           <% if(data){ %>
+             <% for(var i=0; i< data.length; i++) { %>
+               <tr>
+                 <td><%= (i+1) %></td>
+                 <td><%= data[i].nombre %></td>
+                 <td><%= data[i].edad %></td>
+                 <td>
+                   <a href="/eliminar/<%= data[i].id %>" class="btn btn-danger">Eliminar</a>
+                   <a href="/actualizar/<%= data[i].id %>" class="btn btn-info">Actualizar</a>
+                 </td>
+               </tr>
+             <% } %>
+
+           <% } %>
+         </tbody>
+       </table>
+    </div>
+    <div class="col-md-5">
+       <div class="card">
+         <div class="card-body">
+           <form class="/insertar"  method="post">
+             <div class="form-group">
+               <input type="text" name="nombrePersona" placeholder="Nombre" class="form-control">
+             </div>
+             <div class="form-group">
+               <input type="number" name="edadPersona" placeholder="Edad" class="form-control">
+             </div>
+             <button type="submit" name="Insertar" class="btn btn-primary">INSERTAR</button>
+           </form>
+         </div>
+       </div>
+
+    </div>
+  </div>
+</div>
+  </body>
+</html>
